@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title  *ngIf="!support" class="ion-text-center">
+      LOCALIZACIÓN
+    </ion-title>
+    <ion-title *ngIf="support" class="ion-text-center">
+        ASISTENCIA
+    </ion-title>
+
+  
+  </ion-toolbar>
+  <ion-item color="secondary">
+      Tiempo estimado
+    <ion-label>
+      7 minutos
+    </ion-label>
+   
+  </ion-item>
+</ion-header>
+<ion-content>
+
+
+  <agm-map *ngIf="!support" [zoom]="zoom" [style.height.px]="height" [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+
+  <agm-map *ngIf="support" [zoom]="zoom" [latitude]="lat" [longitude]="lng" [style.height.px]="height">
+    <agm-direction [origin]="origin" [destination]="destination"  [renderOptions]="renderOptions" 
+    [markerOptions]="markerOptions"> 
+    </agm-direction>
+  </agm-map>
+
+    <!-- fab placed to the (vertical) center and start -->
+    <ion-fab *ngIf="support"  vertical="bottom" horizontal="end" slot="fixed">
+      <ion-fab-button color="danger">
+        <ion-icon name="logo-whatsapp"></ion-icon>
+      </ion-fab-button>
+    </ion-fab>
+
+
+
+
+
+</ion-content>
+
+
+<ion-button *ngIf="!support" size="large" color="danger" expand="block"  (click)="onClick()">S.O.S</ion-button>
+

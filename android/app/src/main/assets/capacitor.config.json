@@ -1,0 +1,7 @@
+{
+  "appId": "io.ionic.starter",
+  "appName": "aig_mujer",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "www"
+}

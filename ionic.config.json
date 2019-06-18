@@ -1,5 +1,8 @@
 {
   "name": "aig_mujer",
-  "integrations": {},
+  "integrations": {
+    "cordova": {},
+    "capacitor": {}
+  },
   "type": "angular"
 }
