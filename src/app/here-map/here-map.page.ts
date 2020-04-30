@@ -86,14 +86,17 @@ export class HereMapPage implements OnInit {
     let watch = this.geolocation.watchPosition();
     watch.subscribe((data) => {
       // data can be a set of coordinates, or an error (if an error occurred).
-      // data.coords.latitude
-      // data.coords.longitude
+      this.lat = data.coords.latitude;
+      this.lng =  data.coords.longitude;
+
+      console.log("watch", `${this.lat} - ${this.lng}`);
+      
     });
 
   }
 
   /*calculateDistance() {
-    const mexicoCity = new google.maps.LatLng(19.432608, -99.133209.);
+    const mexicoCity =   google.maps.LatLng(19.432608, -99.133209.);
     const jacksonville = new google.maps.LatLng(40.730610, -73.935242.);
     const distance = google.maps.geometry.spherical.computeDistanceBetween(nyc, london);
   }*/
@@ -183,3 +186,5 @@ export class HereMapPage implements OnInit {
 
 
 }
+
+
